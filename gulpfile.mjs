@@ -21,10 +21,14 @@ function images() {
         .pipe(gulp.dest('./dist/images')); // Salva as imagens otimizadas na pasta dist/images
 }
 
-// Observa mudanças nos arquivos SCSS
+// Observa mudanças nos arquivos SCSS e imagens
 function watch() {
-    gulp.watch('./src/styles/**/*.scss', gulp.parallel(styles, images)); // Observa mudanças e executa tarefas
+    gulp.watch('./src/styles/**/*.scss', styles); // Observa mudanças nos arquivos SCSS e executa a tarefa styles
+    gulp.watch('./src/images/**/*', images); // Observa mudanças nas imagens e executa a tarefa images
 }
 
-export default gulp.series(styles, images); // Exporta a tarefa padrão
-export { styles, images, watch }; // Exporta as outras funções
+// Tarefa padrão que executa apenas o SCSS inicialmente
+export default gulp.series(styles); // Exporta a tarefa padrão para compilar apenas SCSS inicialmente
+
+// Exporta as outras funções para uso individual
+export { styles, images, watch };

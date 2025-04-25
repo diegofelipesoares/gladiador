@@ -1,0 +1,43 @@
+.about{
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    width: 100%; /* Garante que o container ocupe toda a largura disponível */
+    
+    &__img{
+        width: 40%;
+        margin-right: 20px;
+        img{
+            width: 100%; /* Garante que a imagem ocupe toda a largura do container */
+            border-radius: 10px; /* Bordas arredondadas */
+        }
+    }
+
+    &__content{
+        width: 60%;
+        flex-shrink: 1;
+        h2{
+            margin-bottom: 20px;
+        }
+        p{
+            margin-bottom: 10px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF; /* Cor de fundo */
+            color: #fff; /* Cor do texto */
+            text-decoration: none; /* Remove o sublinhado */
+            border-radius: 5px; /* Bordas arredondadas */
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+        
+        .button:hover {
+            background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+        }
+    }
+
+}
