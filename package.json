@@ -2,8 +2,10 @@
   "name": "gladiador",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "gulp",
+    "dev": "gulp watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,8 +21,9 @@
   "homepage": "https://github.com/diegofelipesoares/gladiador#readme",
   "description": "",
   "devDependencies": {
-    "gulp": "^5.0.0",
+    "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
+    "gulp-imagemin": "^9.1.0",
     "gulp-sass": "^6.0.1",
     "sass": "^1.87.0"
   }

@@ -1,4 +1,66 @@
-$bgColor: red;
-body{
-    background-color: $bgColor;
+//Importações scss
+@use 'variaveis';
+@use 'hero';
+@use 'sobre';
+@use 'mixins';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+body{
+    background-color: variaveis.$corDeFundo;
+    color: variaveis.$corTextoPrincipal;
+    font-family: 'Poppins', sans-serif;
+}
+
+//PADRONIZAÇÕES
+//Padronização de Títulos
+@mixin title ($fontSize: 16px, $fontWeight: 400, $lineHeight: 1.5){
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    line-height: $lineHeight;
+}
+    //Criando classes de títulos padronizados
+    .title--big{
+        @include title(32px, 700, 1.2);
+    }
+    .title--medium{
+        @include title(24px, 600, 1.4);
+    }
+    .title--small{
+        @include title(16px, 400, 1.5);
+    }
+    .title--xsmall{
+        @include title(12px, 300, 1.5);
+    }
+
+//Padronizações de texto
+@mixin text ($fontSize: 16px, $fontWeight: 400, $lineHeight: 1.5){
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    line-height: $lineHeight;
+}
+    //Criando classes de texto padronizadas
+    .text--big{
+        @include text(24px, 700, 1.2);
+    }
+    .text--medium{
+        @include text(18px, 400, 1.4);
+    }
+    .text--small{
+        @include text(16px, 400, 1.5);
+    }
+    .text--xsmall{
+        @include text(12px, 300, 1.5);
+    }
+    .link-text{
+        @include text(16px, 400, 1.5);
+        color: #fff;
+        text-decoration: none;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
